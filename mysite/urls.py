@@ -1,3 +1,4 @@
+# coding:utf-8
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,7 +17,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# namespace="polls" 添加命名空间
+
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r"^polls/", include("polls.urls")),
+	url(r'^admin/', include(admin.site.urls)),
+	url(r"^polls/", include("polls.urls", namespace='polls')),
 ]
